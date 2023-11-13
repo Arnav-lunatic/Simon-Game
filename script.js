@@ -61,11 +61,13 @@ function getRandomBox() {
     const randomNum = Math.floor(Math.random() * 4)
     const box = document.querySelector(`#${boxes[randomNum].name}`) //select the box i.e. (a, b, c, d)
 
-    box.classList.add('boxAnimation')
-    
+    setTimeout(() => {
+        box.classList.add('boxAnimation')
+    }, 1000);
+
     setTimeout(() => {
         box.classList.remove('boxAnimation')
-    }, 500);
+    }, 1500);
 
     boxesQueue.push(boxes[randomNum].name)
 }
