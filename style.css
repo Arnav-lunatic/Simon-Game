@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #011F3F;
+    display: grid;
+    justify-items: center;
+    height: 100vh;
+}
+
+.intruction {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #011F3F50;
+    padding: clamp(20px, 10vw, 50px);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    min-width: 300px;
+    
+}
+
+.intruction li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1em, 2vw, 1.1em);
+    color: #FEF2BF;
+}
+
+.intruction h1 {
+    text-align: left;
+    font-size: 1em;
+}
+
+.okay {
+    padding: 5px 10px;
+    font-size: 15px;
+    margin-top: 20px;
+    background-color: #FEF2BF;
+    border: none;
+    border-radius: 5px;
+    transition: .15s;
+}
+
+.okay:hover {
+    background-color: rgba(254, 242, 191, 0.74)
+}
+
+.okay:active {
+    transform: scale(0.9);
+}
+
+h1 {
+    font-family: 'Press Start 2P';
+    text-align: center;
+    font-size: clamp(1em, 3vw, 2.5em);
+    padding: clamp(10px, 5vw, 30px);
+    color: #FEF2BF;
+    text-shadow: 0 0 10px #000;
+
+    /* Remove User Selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.container {
+    position: relative;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: clamp(10px, 2vw, 30px);
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.box {
+    border-radius: 20px;
+    border: 2px solid #FEF2BF;
+    box-shadow: 0 0 10px #000;
+    transition: .15s;
+}
+
+#a {
+    background-color: #7F58AF;
+}
+
+#b {
+    background-color: #64C5EB;
+}
+
+#c {
+    background-color: #E84D8A;
+}
+
+#d {
+    background-color: #FEB326;
+}
+
+.boxAnimation {
+    opacity : .2;
+    box-shadow : 0 0 20px #fff;
+}
+
+.clickAnimation {
+    border-width: 10px;
+    box-shadow : 0 0 10px #fff;
+}
