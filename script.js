@@ -1,3 +1,6 @@
+const scores = document.querySelector('.scores')
+let player = 'Goofy Player'
+
 const boxes = [
     { name: 'a', sound: 'sounds/green.mp3' },
     { name: 'b', sound: 'sounds/red.mp3' },
@@ -10,7 +13,7 @@ let boxesQueue = []
 let index = 0
 let level = 0
 let gameOn = false
-document.querySelector('h1').addEventListener('click', () => {
+document.querySelector('.mainHeading').addEventListener('click', () => {
     if (!gameOn) {
         startGame()
     }
@@ -76,6 +79,12 @@ function gameover() {
     const worng = new Audio('sounds/wrong.mp3')
     worng.play()
 
+    scores.innerHTML += `
+            <div class="eachPlayerScore">
+                <h2 class="playerName">${player}</h2>
+                <h2 class="playerScores">Level ${level}</h2>
+            </div>`
+
     document.querySelector('.mainHeading').innerHTML = 'Game Over !! Click Here To Start Again'
     
     index = 0
@@ -90,6 +99,7 @@ function gameover() {
 
     gameOn = false
 
+    saveScores()
 }
 
 
@@ -114,4 +124,43 @@ function gameLogic(id, boxesQueueIndex) {
         }
     }
 }
-            
+
+
+// Highscore Panel
+
+
+let highscorePanelOut = false
+document.querySelector('.highscoreButton').addEventListener('click', () => {
+    if (!highscorePanelOut) {
+        document.querySelector('.line1').style.transform = 'rotate(45deg)'
+        document.querySelector('.line3').style.transform = 'rotate(-45deg)'
+        document.querySelector('.line2').style.opacity = '0'
+        document.querySelector('.highscore').style.left = '0'
+
+        highscorePanelOut = true
+    } else {
+        document.querySelector('.line1').style.transform = ''
+        document.querySelector('.line3').style.transform = ''
+        document.querySelector('.line2').style.opacity = '1'
+        document.querySelector('.highscore').style.left = '-500px'
+
+        highscorePanelOut = false
+    }
+})
+
+// Player Name Input
+document.querySelector('.nameDone').addEventListener('click', () => {
+    if (player!==' ') {
+        player = document.querySelector('.enterName').value
+    }
+    document.querySelector('.whoPlaying').innerHTML = player
+})
+
+
+
+function saveScores() {
+    localStorage.data = scores.innerHTML
+}
+if (localStorage.data.length !== 0) {
+    scores.innerHTML = localStorage.data
+}

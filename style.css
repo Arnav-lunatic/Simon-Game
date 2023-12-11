@@ -1,13 +1,57 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background-color: #011F3F;
     display: grid;
     justify-items: center;
-    height: 100vh;
+    height: 100dvh;
+}
+
+.highscoreButton {
+    display: grid;
+    gap: 5px;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.line {
+    transform-origin: left;
+	background-color: #fff;
+	height: 7px;
+	width: 34px;
+	border-radius: 5px;
+	transition: .3s;
+}
+
+.highscore {
+    position: fixed;
+    top: 0;
+    left: -500px;
+    bottom: 0;
+    width: 100vw;
+    max-width: 500px;
+    background-color: #000000af;
+    backdrop-filter: blur(10px);
+    transition: .5s;
+}
+
+.scores {
+    margin: 50px 10px;
+}
+
+.eachPlayerScore {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    margin: 20px;
+
 }
 
 .intruction {
@@ -27,7 +71,6 @@ body {
 }
 
 .intruction li {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(1em, 2vw, 1.1em);
     color: #FEF2BF;
 }
@@ -59,14 +102,54 @@ h1 {
     font-family: 'Press Start 2P';
     text-align: center;
     font-size: clamp(1em, 3vw, 2.5em);
-    padding: clamp(10px, 5vw, 30px);
     color: #FEF2BF;
     text-shadow: 0 0 10px #000;
+    padding-top: clamp(10px, 5vw, 30px);
 
     /* Remove User Selection */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+
+.nameContainer {
+    display: grid;
+    justify-items: center;
+}
+
+.nameContainer .wrapper {
+    display: flex;
+    height: 40px;
+}
+
+input {
+    background-color: transparent;
+    color: #FEF2BF;
+    border: 2px solid #FEF2BF;
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+    padding: 5px 10px;
+    font-size: 1.1em;
+}
+
+input:focus {
+    outline: none;
+}
+
+.nameDone {
+    padding: 0 10px;
+    background-color: #FEF2BF;
+    border: 2px solid #FEF2BF;
+    color: #011F3F;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.whoPlaying {
+    font-size: 2em;
+    color: #FEF2BF;
 }
 
 .container {
@@ -76,8 +159,8 @@ h1 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: clamp(10px, 2vw, 30px);
-    width: 90vw;
-    height: 90vw;
+    width: 80vw;
+    height: 80vw;
     max-width: 600px;
     max-height: 600px;
 }
