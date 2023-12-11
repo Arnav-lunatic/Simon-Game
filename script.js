@@ -159,8 +159,8 @@ document.querySelector('.nameDone').addEventListener('click', () => {
 
 
 function saveScores() {
-    localStorage.data = scores.innerHTML
+    localStorage.scoreData = scores.innerHTML
 }
-if (localStorage.data.length !== 0) {
-    scores.innerHTML = localStorage.data
+if (localStorage.scoreData.length !== 0) {
+    scores.innerHTML = localStorage.scoreData
 }
