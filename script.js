@@ -86,11 +86,7 @@ function gameover() {
             </div>`
 
     document.querySelector('.mainHeading').innerHTML = 'Game Over !! Click Here To Start Again'
-    
-    index = 0
-    boxesQueue = []
-    level = 0
-    document.querySelector('.level').innerHTML = `Level ${level}`
+
 
     document.querySelector('body').style.backgroundColor = 'red'
     setTimeout(() => {
@@ -106,6 +102,12 @@ function gameover() {
 function startGame() {
     document.querySelector('.mainHeading').innerHTML = 'Keep Going'
     gameOn = true
+
+    index = 0
+    boxesQueue = []
+    level = 0
+    document.querySelector('.level').innerHTML = `Level ${level}`
+
     getRandomBox()
 }
 
